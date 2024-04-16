@@ -65,7 +65,8 @@ export const App = () => {
 
    return (
       <>
-         <div className=" min-h-screen bg-gray-200 bg-[url('./assets/images/bg-mobile-light.jpg')] bg-contain bg-no-repeat ">
+         <div className=" min-h-screen bg-gray-200 dark:bg-gray-900 bg-[url('./assets/images/bg-mobile-light.jpg')]
+         bg-contain bg-no-repeat dark:bg-[url('./assets/images/bg-mobile-dark.jpg')]">
             <Header />
             <main className=" container mx-auto mt-8 px-4 ">
                <TodoCreate createTodo={createTodo} />
@@ -80,7 +81,7 @@ export const App = () => {
                />
                <TodoFilter changeFilter={changeFilter} filter={filter}/>
             </main>
-            <footer className=" mt-8 text-center text-sm text-gray-600">
+            <footer className=" mt-8 text-center text-sm text-gray-600 dark:text-gray-400">
                Drag and drop reorder list
             </footer>
          </div>
