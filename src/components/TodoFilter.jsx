@@ -3,7 +3,10 @@ import PropTypes from "prop-types";
 export const TodoFilter = ({ changeFilter, filter }) => {
    return (
       <section className=" container mx-auto text-sm">
-         <div className=" mt-4 flex justify-center gap-4 rounded-md bg-white dark:bg-gray-800 p-4 font-semibold text-gray-400">
+         <div
+            className=" mt-4 flex justify-center gap-4 rounded-md bg-white p-4 font-semibold 
+                     text-gray-400 transition-all duration-500 dark:bg-gray-800"
+         >
             <button
                className={`${
                   filter === "all"
