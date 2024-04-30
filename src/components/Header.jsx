@@ -19,7 +19,7 @@ export const Header = () => {
    }, [darkMode]);
 
    return (
-      <header className=" container mx-auto px-4 pt-8" >
+      <header className=" container mx-auto px-4 pt-8 md:max-w-2xl" >
          <div className=" flex justify-between">
             <h1 className=" text-3xl font-semibold uppercase tracking-[10px] text-white ">
                TODO
