@@ -1,12 +1,13 @@
 import PropTypes from "prop-types";
 import { CrossIcon } from "./icons/CrossIcon";
 import { CheckIcon } from "./icons/CheckIcon";
+import React from "react";
 
-export const TodoItem = ({ todo, removeTodo, updateTodo }) => {
+export const TodoItem = React.forwardRef(function TodoItem({ todo, removeTodo, updateTodo, ...props }, ref) {
    const { id, title, completed } = todo;
 
    return (
-      <article className=" flex gap-4 border-b dark:border-gray-700 p-4 text-sm dark:bg-gray-800 transition-all duration-500">
+      <article {...props} ref={ref} className="flex gap-4 border-b dark:border-gray-700 p-4 text-sm dark:bg-gray-800 transition-all duration-500">
          <button
             className={`${
                completed
@@ -22,12 +23,13 @@ export const TodoItem = ({ todo, removeTodo, updateTodo }) => {
          >
             {title}
          </p>
-         <button className=" flex-none" onClick={() => removeTodo(id)}>
+         <button className="flex-none" onClick={() => removeTodo(id)}>
             <CrossIcon />
          </button>
       </article>
    );
-};
+});
+
 
 TodoItem.propTypes = {
    todo: PropTypes.shape({
